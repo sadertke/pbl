@@ -17,11 +17,15 @@
  tracked,untracked  로컬에서 스테이징이 되었으면 전자  아니면 후자이다
  git add 명령어를 이용해  tracked 로 바꾸고 로컬저장소에 스테이징한다
  git remove --cached [파일이름] 을 통해 로컬저장소에서 untracked 시킬수있다
-  
+ 이미 커밋된 파일을 수정하면 modified로 바뀌는데 add 하면 다시추적된다 
   * commit
 ```bash
 	git commit -m "내용"
 ``` 
+  * push 
+```bash
+	git push origin [브랜치이름]
+```
  3. branch 
 	* 메인에 병합하기 전에 구현할 코드다발을 따로 빼놓은 버젼 후에 메인에 병합
 	* branch 생성
