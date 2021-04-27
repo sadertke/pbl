@@ -18,7 +18,8 @@
 
   위를 데이터는 각 데이터 노드로분할 된후 map function 과 reduce function을 호출하고 결과를 네임노드로 보낸다
     * map_func
- ```js
+ 
+ ```javascript
   map_f = function()
   {
     var res = this.text.split(' ');
@@ -30,10 +31,9 @@
     }
   
   }
-  
   ```
     * reduce_func
-  ```js
+  ```javascript
   reduce_f = function(key,values)
   {
     var = totalcount =0;
@@ -50,4 +50,8 @@
   
     db.text.mapReduce(map_f,reduce_f,"wordcount)
   ```
+  
+  
+  
+  
   
