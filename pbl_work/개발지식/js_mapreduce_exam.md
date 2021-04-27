@@ -14,7 +14,7 @@
     { "text" : "this is a book"},
     { "text" : "this is a book"}]
   
-```
+  ```
 
   위를 데이터는 각 데이터 노드로분할 된후 map function 과 reduce function을 호출하고 결과를 네임노드로 보낸다
     * map_func
@@ -33,6 +33,7 @@
   }
   ```
     * reduce_func
+    * 
   ```javascript
   reduce_f = function(key,values)
   {
@@ -51,6 +52,43 @@
     db.text.mapReduce(map_f,reduce_f,"wordcount)
   ```
   
+ ## 영화 배우 예제 
+  ```json
+  [{ "actor" : "richard gere","movies" :['chicago','runway brige']},
+    { "actor" : "rovert downey jr","movies" :['iron man','iron man2','avengers']},
+    ]
+  
+  ```
+
+ 
+ 
+  ```javascript
+  map_f = function()
+  {
+    for(var i in this.movies)
+    {
+    key = {movie : this.movies[i]}
+    value = {actor : this.actor}
+    emit(key,value);
+    }
+  
+  }
+  ```
+    * reduce_func
+    * 
+  ```javascript
+  reduce_f = function(key,values)
+  {
+    actor_list = {actors:[]};
+    for(var i in values){
+      actor_list.actors = values[i].actor.concat(actor_list.actors);
+    }
+    return actor_list;
+  
+  }
+  
+  ```
+
   
   
   
