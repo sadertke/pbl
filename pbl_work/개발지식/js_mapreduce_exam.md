@@ -33,7 +33,7 @@
   }
   ```
     * reduce_func
-    * 
+     
   ```javascript
   reduce_f = function(key,values)
   {
@@ -75,7 +75,7 @@
   }
   ```
     * reduce_func
-    * 
+    
   ```javascript
   reduce_f = function(key,values)
   {
